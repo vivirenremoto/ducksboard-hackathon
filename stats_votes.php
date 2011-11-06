@@ -35,7 +35,6 @@ curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": $rajoy_percent }");
 curl_setopt ($ch, CURLOPT_POST, 1);
 curl_exec ($ch);
 
-
 $ch = curl_init('https://push.ducksboard.com/values/12436/');
 curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
 curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": $rubalcaba_percent }");
@@ -44,7 +43,7 @@ curl_exec ($ch);
 
 
 // avatars
-$img = 'http://miquelcamps.com/services/ducksboard/img/votar_rajoy.png';
+/*$img = 'http://miquelcamps.com/services/ducksboard/img/votar_rajoy.png';
 $ch = curl_init('https://push.ducksboard.com/values/12434/');
 curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
 curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
@@ -56,7 +55,7 @@ $ch = curl_init('https://push.ducksboard.com/values/12433/');
 curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
 curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
 curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
+curl_exec ($ch);*/
 
 
 // days left
