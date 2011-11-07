@@ -16,127 +16,35 @@ function getWeather($location){
 	);
 }
 
-// new york
-$img = 'http://207.251.86.248/cctv20.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12556/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('new york'));
-$ch = curl_init('https://push.ducksboard.com/values/12948/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
 
 
-// madrid
-$img = 'http://www.meteosurfcanarias.com/1-webcams/med/plaza-espana-madrid.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12557/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('madrid'));
-$ch = curl_init('https://push.ducksboard.com/values/12949/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-// paris
-$img = 'http://www.meteosurfcanarias.com/1-webcams/webcam-eiffel-tour.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12558/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('paris'));
-$ch = curl_init('https://push.ducksboard.com/values/12950/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-// tokyo
-$img = 'http://221.255.120.171/axis-cgi/jpg/image.cgi?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12559/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('tokyo'));
-$ch = curl_init('https://push.ducksboard.com/values/12951/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
+$cities = array();
+$cities[] = array( 'name' => 'new york', 'id_pic' => 12556, 'id_info' => 12948, 'image' => 'http://207.251.86.248/cctv20.jpg' );
+$cities[] = array( 'name' => 'madrid', 'id_pic' => 12557, 'id_info' => 12949, 'image' => 'http://www.meteosurfcanarias.com/1-webcams/med/plaza-espana-madrid.jpg' );
+$cities[] = array( 'name' => 'paris', 'id_pic' => 12558, 'id_info' => 12950, 'image' => 'http://www.meteosurfcanarias.com/1-webcams/webcam-eiffel-tour.jpg' );
+$cities[] = array( 'name' => 'tokyo', 'id_pic' => 12559, 'id_info' => 12951, 'image' => 'http://221.255.120.171/axis-cgi/jpg/image.cgi' );
+$cities[] = array( 'name' => 'london', 'id_pic' => 12945, 'id_info' => 12952, 'image' => 'http://www.meteosurfcanarias.com/1-webcams/london-oxford-street.jpg' );
+$cities[] = array( 'name' => 'monaco', 'id_pic' => 12944, 'id_info' => 12953, 'image' => 'http://www.montecarloresort.com/images/common/fullsize_montecarlo.jpg' );
+$cities[] = array( 'name' => 'cancun', 'id_pic' => 12946, 'id_info' => 12955, 'image' => 'http://www.meteosurfcanarias.com/1-webcams/webcam-cancun-caribbean.jpg' );
+$cities[] = array( 'name' => 'bangkok', 'id_pic' => 12947, 'id_info' => 12958, 'image' => 'http://www.bkkok.com/webcam/ccam.jpg' );
 
 
-// london
-$img = 'http://www.meteosurfcanarias.com/1-webcams/london-oxford-street.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12945/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
 
-extract(getWeather('london'));
-$ch = curl_init('https://push.ducksboard.com/values/12952/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-// monaco
-$img = 'http://www.montecarloresort.com/images/common/fullsize_montecarlo.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12944/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('monaco'));
-$ch = curl_init('https://push.ducksboard.com/values/12953/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-// cancun
-$img = 'http://www.meteosurfcanarias.com/1-webcams/webcam-cancun-caribbean.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12946/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('cancun'));
-$ch = curl_init('https://push.ducksboard.com/values/12955/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-// bangkok
-$img = 'http://www.bkkok.com/webcam/ccam.jpg?v=' . time();
-$ch = curl_init('https://push.ducksboard.com/values/12947/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
-
-extract(getWeather('bangkok'));
-$ch = curl_init('https://push.ducksboard.com/values/12958/');
-curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
-curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
-curl_setopt ($ch, CURLOPT_POST, 1);
-curl_exec ($ch);
+foreach( $cities as $city ){
+	$img = $city['image'] . '?v=' . time();
+	$ch = curl_init('https://push.ducksboard.com/values/' . $city['id_pic'] . '/');
+	curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
+	curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\"} }");
+	curl_setopt ($ch, CURLOPT_POST, 1);
+	curl_exec ($ch);
+	
+	extract(getWeather($city['name']));
+	$ch = curl_init('https://push.ducksboard.com/values/' . $city['id_info'] . '/');
+	curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
+	curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": {\"source\": \"$img\", \"caption\": \"$caption\"} }");
+	curl_setopt ($ch, CURLOPT_POST, 1);
+	curl_exec ($ch);
+}
 
 
 // close
