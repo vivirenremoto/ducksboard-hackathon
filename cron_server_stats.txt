@@ -1,0 +1,4 @@
+*/10 * * * * top -b -n1 > top.log
+*/10 * * * * head /var/log/apache2/error.log > /home/miquelcamps/public_html/services/ducksboard/data/error.log
+*/10 * * * * head /var/log/apache2/access.log > /home/miquelcamps/public_html/services/ducksboard/data/access.log
+*/15 * * * * http://domain.com/stats_server.php

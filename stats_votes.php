@@ -35,6 +35,7 @@ curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": $rajoy_percent }");
 curl_setopt ($ch, CURLOPT_POST, 1);
 curl_exec ($ch);
 
+
 $ch = curl_init('https://push.ducksboard.com/values/12436/');
 curl_setopt($ch, CURLOPT_USERPWD, API_KEY . ":ignored"); 
 curl_setopt ($ch, CURLOPT_POSTFIELDS, "{\"value\": $rubalcaba_percent }");
